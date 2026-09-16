@@ -16,39 +16,64 @@
         </nav>
     </header>
     <main>
-        <h1 class="highlight">Calvin Hirschler</h1>
-        <p class="subtitle">Multidisciplinary Software</p>
-        <p>I enjoy solving complex problems, innovating, and programming across a variety of disciplines. As a jack of all trades, my work spans from augmented reality to custom operating system scripts.</p>
+        <div class="name-container" id="nameContainer">
+            <h1 class="huge-name">Calvin Hirschler</h1>
+            <div class="invert-circle" id="invertCircle"></div>
+        </div>
+
+        <script>
+            const container = document.getElementById('nameContainer');
+            const circle = document.getElementById('invertCircle');
+
+            container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                circle.style.left = `${x}px`;
+                circle.style.top = `${y}px`;
+            });
+        </script>
+
+        <div class="content-box">
+            <p class="subtitle">Multidisciplinary Software</p>
+            <p>I enjoy solving complex problems, innovating, and programming across a variety of disciplines. As a jack of all trades, my work spans from augmented reality to custom operating system scripts.</p>
+        </div>
         
-        <h3>Core Competencies</h3>
-        <ul class="skill-tags">
-            <li>Algorithmic Problem-Solving</li>
-            <li>Innovation</li>
-            <li>Team Collaboration</li>
-            <li>Leadership</li>
-            <li>Technical Presentations</li>
-        </ul>
+        <div class="content-box">
+            <h3>Core Competencies</h3>
+            <ul class="skill-tags">
+                <li>Algorithmic Problem-Solving</li>
+                <li>Innovation</li>
+                <li>Team Collaboration</li>
+                <li>Leadership</li>
+                <li>Technical Presentations</li>
+            </ul>
+        </div>
 
-        <h3>Technology & Concepts</h3>
-        <ul class="skill-tags">
-            <li>AI & Machine Learning</li>
-            <li>Evolutionary Computing</li>
-            <li>Augmented Reality & Spatial Computing</li>
-            <li>Computer Vision</li>
-            <li>Digital Forensics & Malware Analysis</li>
-            <li>Unity</li>
-            <li>GitHub</li>
-            <li>Astro & Tailwind CSS</li>
-        </ul>
+        <div class="content-box">
+            <h3>Technology & Concepts</h3>
+            <ul class="skill-tags">
+                <li>AI & Machine Learning</li>
+                <li>Evolutionary Computing</li>
+                <li>Augmented Reality & Spatial Computing</li>
+                <li>Computer Vision</li>
+                <li>Digital Forensics & Malware Analysis</li>
+                <li>Unity</li>
+                <li>GitHub</li>
+                <li>Astro & Tailwind CSS</li>
+            </ul>
+        </div>
 
-        <h3>Languages</h3>
-        <ul class="skill-tags">
-            <li>C#</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>C++</li>
-            <li>C</li>
-        </ul>
+        <div class="content-box">
+            <h3>Languages</h3>
+            <ul class="skill-tags">
+                <li>C#</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>C</li>
+            </ul>
+        </div>
     </main>
 </body>
 </html>
