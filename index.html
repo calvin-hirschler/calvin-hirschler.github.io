@@ -116,7 +116,7 @@
                     setTimeout(() => {
                         nameEl.innerHTML = text;
                         isShattered = false;
-                    }, 400);
+                    }, 800);
                 }
             }
             
@@ -126,15 +126,16 @@
         const glitchElements = document.querySelectorAll('.content-box, .skill-tags li');
         
         glitchElements.forEach(el => {
-            const triggerGlitch = () => {
+            el.addEventListener('mouseenter', () => {
                 el.style.animation = 'none';
                 void el.offsetWidth; 
                 const animationName = el.classList.contains('content-box') ? 'glitch-box' : 'glitch-text';
-                el.style.animation = `${animationName} 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both`;
-            };
+                el.style.animation = `${animationName} 0.4s ease-out forwards`;
+            });
             
-            el.addEventListener('mouseenter', triggerGlitch);
-            el.addEventListener('mouseleave', triggerGlitch);
+            el.addEventListener('mouseleave', () => {
+                el.style.animation = 'none';
+            });
         });
     </script>
 </body>

@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -60,6 +60,7 @@ main {
 }
 
 .huge-name {
+    font-family: 'Orbitron', sans-serif;
     font-size: 5rem;
     font-weight: 900;
     margin: 0;
@@ -110,19 +111,13 @@ main {
 }
 
 @keyframes glitch-box {
-    0% { transform: translate(0); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-    20% { transform: translate(-2px, 2px); box-shadow: -2px 0 #cccccc, 2px 0 #2e8b57; }
-    40% { transform: translate(-2px, -2px); box-shadow: 2px 0 #cccccc, -2px 0 #2e8b57; }
-    60% { transform: translate(2px, 2px); box-shadow: -2px 0 #cccccc, 2px 0 #2e8b57; }
-    80% { transform: translate(2px, -2px); box-shadow: 2px 0 #cccccc, -2px 0 #2e8b57; }
-    100% { transform: translate(0); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    0% { transform: scale(1); box-shadow: 0 4px 6px rgba(0,0,0,0.3); border-color: #333; }
+    50% { transform: scale(1.02); box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); border-color: #ffffff; }
+    100% { transform: scale(1.01); box-shadow: 0 0 10px rgba(255, 255, 255, 0.15); border-color: #2e8b57; }
 }
 
 @keyframes glitch-text {
-    0% { transform: translate(0) skew(0deg); text-shadow: none; }
-    20% { transform: translate(-1px, 1px) skew(-5deg); text-shadow: -1px 0 #cccccc, 1px 0 #2e8b57; }
-    40% { transform: translate(-1px, -1px) skew(5deg); text-shadow: 1px 0 #cccccc, -1px 0 #2e8b57; }
-    60% { transform: translate(1px, 1px) skew(-5deg); text-shadow: -1px 0 #cccccc, 1px 0 #2e8b57; }
-    80% { transform: translate(1px, -1px) skew(5deg); text-shadow: 1px 0 #cccccc, -1px 0 #2e8b57; }
-    100% { transform: translate(0) skew(0deg); text-shadow: none; }
+    0% { transform: scale(1); background-color: #2a2a2a; color: #e0e0e0; box-shadow: none; }
+    50% { transform: scale(1.1); background-color: #ffffff; color: #121212; box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+    100% { transform: scale(1.05); background-color: #2e8b57; color: #ffffff; box-shadow: 0 0 8px rgba(46, 139, 87, 0.5); }
 }
