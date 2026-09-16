@@ -16,26 +16,12 @@
         </nav>
     </header>
     <main>
-        <div class="name-container" id="nameContainer">
-            <h1 class="huge-name">Calvin Hirschler</h1>
-            <div class="invert-circle" id="invertCircle"></div>
+        <div class="name-container">
+            <h1 class="huge-name" id="shatterName">Calvin Hirschler</h1>
         </div>
 
-        <script>
-            const container = document.getElementById('nameContainer');
-            const circle = document.getElementById('invertCircle');
-
-            container.addEventListener('mousemove', (e) => {
-                const rect = container.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                circle.style.left = `${x}px`;
-                circle.style.top = `${y}px`;
-            });
-        </script>
-
         <div class="content-box">
-            <p class="subtitle">Multidisciplinary Software</p>
+            <p class="subtitle">Multidisciplinary Software Engineer</p>
             <p>I enjoy solving complex problems, innovating, and programming across a variety of disciplines. As a jack of all trades, my work spans from augmented reality to custom operating system scripts.</p>
         </div>
         
@@ -75,5 +61,81 @@
             </ul>
         </div>
     </main>
+
+    <script>
+        const nameEl = document.getElementById('shatterName');
+        let isShattered = false;
+
+        nameEl.addEventListener('click', () => {
+            if (isShattered) return;
+            isShattered = true;
+
+            const text = nameEl.innerText;
+            nameEl.innerHTML = '';
+            const particles = [];
+
+            for (let char of text) {
+                const span = document.createElement('span');
+                span.innerText = char === ' ' ? '\u00A0' : char;
+                span.style.display = 'inline-block';
+                span.style.position = 'relative';
+                nameEl.appendChild(span);
+                
+                particles.push({
+                    el: span,
+                    vx: (Math.random() - 0.5) * 20,
+                    vy: (Math.random() - 1) * 20,
+                    rot: (Math.random() - 0.5) * 45,
+                    x: 0,
+                    y: 0,
+                    r: 0,
+                    opacity: 1
+                });
+            }
+
+            const gravity = 0.8;
+
+            function animate() {
+                let active = false;
+                particles.forEach(p => {
+                    p.vy += gravity;
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.r += p.rot;
+                    p.opacity -= 0.015;
+                    
+                    p.el.style.transform = `translate(${p.x}px, ${p.y}px) rotate(${p.r}deg)`;
+                    p.el.style.opacity = Math.max(0, p.opacity);
+                    
+                    if (p.opacity > 0) active = true;
+                });
+                
+                if (active) {
+                    requestAnimationFrame(animate);
+                } else {
+                    setTimeout(() => {
+                        nameEl.innerHTML = text;
+                        isShattered = false;
+                    }, 400);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        });
+
+        const glitchElements = document.querySelectorAll('.content-box, .skill-tags li');
+        
+        glitchElements.forEach(el => {
+            const triggerGlitch = () => {
+                el.style.animation = 'none';
+                void el.offsetWidth; 
+                const animationName = el.classList.contains('content-box') ? 'glitch-box' : 'glitch-text';
+                el.style.animation = `${animationName} 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both`;
+            };
+            
+            el.addEventListener('mouseenter', triggerGlitch);
+            el.addEventListener('mouseleave', triggerGlitch);
+        });
+    </script>
 </body>
 </html>

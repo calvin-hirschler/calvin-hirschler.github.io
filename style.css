@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #121212;
     color: #e0e0e0;
+    overflow-x: hidden;
 }
 
 header {
@@ -52,6 +53,25 @@ main {
     padding: 0 1rem;
 }
 
+.name-container {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+}
+
+.huge-name {
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0;
+    color: #2e8b57;
+    cursor: pointer;
+}
+
+.huge-name:hover {
+    color: #3cb371;
+    text-shadow: 0 0 15px rgba(46, 139, 87, 0.6);
+}
+
 .content-box {
     background: #1e1e1e;
     border: 1px solid #333;
@@ -59,12 +79,10 @@ main {
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content-box:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(46, 139, 87, 0.2);
+    border-color: #2e8b57;
 }
 
 .skill-tags {
@@ -83,27 +101,28 @@ main {
     font-size: 0.9rem;
     font-weight: 500;
     border: 1px solid #444;
-    transition: all 0.3s ease;
 }
 
 .skill-tags li:hover {
     background-color: #2e8b57;
     color: #fff;
     border-color: #2e8b57;
-    transform: translateY(-2px);
 }
 
-.name-container {
-    text-align: center;
-    margin: 3rem 0;
-    padding: 2rem;
+@keyframes glitch-box {
+    0% { transform: translate(0); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    20% { transform: translate(-2px, 2px); box-shadow: -2px 0 #cccccc, 2px 0 #2e8b57; }
+    40% { transform: translate(-2px, -2px); box-shadow: 2px 0 #cccccc, -2px 0 #2e8b57; }
+    60% { transform: translate(2px, 2px); box-shadow: -2px 0 #cccccc, 2px 0 #2e8b57; }
+    80% { transform: translate(2px, -2px); box-shadow: 2px 0 #cccccc, -2px 0 #2e8b57; }
+    100% { transform: translate(0); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
 }
 
-.huge-name {
-    font-size: 5rem;
-    font-weight: 900;
-    margin: 0;
-    color: #2e8b57;
-    cursor: pointer;
-    transition: color 0.3s ease;
+@keyframes glitch-text {
+    0% { transform: translate(0) skew(0deg); text-shadow: none; }
+    20% { transform: translate(-1px, 1px) skew(-5deg); text-shadow: -1px 0 #cccccc, 1px 0 #2e8b57; }
+    40% { transform: translate(-1px, -1px) skew(5deg); text-shadow: 1px 0 #cccccc, -1px 0 #2e8b57; }
+    60% { transform: translate(1px, 1px) skew(-5deg); text-shadow: -1px 0 #cccccc, 1px 0 #2e8b57; }
+    80% { transform: translate(1px, -1px) skew(5deg); text-shadow: 1px 0 #cccccc, -1px 0 #2e8b57; }
+    100% { transform: translate(0) skew(0deg); text-shadow: none; }
 }
