@@ -3,48 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calvin - Portfolio</title>
+    <title>Calvin Hirschler - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <header>
         <nav>
-            <a href="#about">About</a>
+            <a href="#home">Home</a>
             <a href="#projects">Projects</a>
+            <a href="#games">Games</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <section id="about">
-            <h1>Hi, I'm Calvin</h1>
-            <p>I am a CSSE Master's student focusing on software engineering, spatial computing, and digital forensics. I also co-found an independent game studio where I develop games using Unity and C#.</p>
+        <section id="home">
+            <h1 class="highlight">Calvin Hirschler</h1>
+            <p class="subtitle">Multidisciplinary Software Engineer bridging software, hardware, AI, and game development.</p>
+            <p>I enjoy solving complex problems, innovating, and programming across a variety of disciplines. As a jack of all trades, my work spans from enterprise augmented reality to custom operating system scripts.</p>
+            
+            <h3>Core Competencies</h3>
+            <ul>
+                <li>Leadership</li>
+                <li>Team Collaboration</li>
+                <li>Technical Presentations</li>
+                <li>Algorithmic Problem-Solving</li>
+                <li>Innovation</li>
+            </ul>
+
+            <h3>Languages</h3>
+            <ul>
+                <li>C#</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>C</li>
+            </ul>
         </section>
+
+        <hr>
 
         <section id="projects">
             <h2>Projects</h2>
             
-            <div class="project-card">
-                <h3>Game Development</h3>
-                <p>Building physics-based mechanics, multiplayer systems, and dialogue loops for commercial titles at Deadtag Studios.</p>
+            <div class="card">
+                <h3>AI Research Abstract Matcher</h3>
+                <div class="media-placeholder">[Image/Video Placeholder]</div>
+                <p>Built an AI tool using Python and Hugging Face to match researchers to proposal abstracts via prompt engineering.</p>
             </div>
 
-            <div class="project-card">
-                <h3>Spatial Computing & AR</h3>
-                <p>Developing augmented reality cycle count applications for the Magic Leap 2, integrating Bluetooth RFID scanners and spatial mapping.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Digital Forensics</h3>
-                <p>Configuring and analyzing virtual networking environments like OpenClaw within Ubuntu VirtualBox setups.</p>
+            <div class="card">
+                <h3>Terminal Wordle Solver</h3>
+                <div class="media-placeholder">[Image/Video Placeholder]</div>
+                <p>Developed a C++ terminal application calculating average remaining words to minimize the search space.</p>
             </div>
         </section>
 
+        <hr>
+
+        <section id="games">
+            <h2>Games</h2>
+            
+            <div class="card">
+                <h3>2D Unity Roguelike</h3>
+                <div class="media-placeholder">[Image/Video Placeholder]</div>
+                <p>Directed a two-year project featuring 24 unique enemies and over 40 weapons.</p>
+            </div>
+        </section>
+
+        <hr>
+
         <section id="contact">
             <h2>Contact</h2>
-            <p>Connect with me on <a href="#">LinkedIn</a> or check out my code on <a href="#">GitHub</a>.</p>
+            <p>Email: calvinhirschler@gmail.com</p>
+            <p>LinkedIn: linkedin.com/in/calvin-hirschler</p>
         </section>
     </main>
 </body>
