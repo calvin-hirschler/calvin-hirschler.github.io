@@ -19,24 +19,70 @@
     <main>
         <h2>Contact</h2>
         
-        <div class="content-box">
-            <p>Email: calvinhirschler@gmail.com</p>
-            <p>LinkedIn: linkedin.com/in/calvin-hirschler</p>
+        <div class="contact-grid">
+            <div class="content-box contact-bubble" data-copy="calvinhirschler@gmail.com">
+                <h3>Email</h3>
+                <p>calvinhirschler@gmail.com</p>
+                <span class="copy-msg">Click to copy</span>
+            </div>
+
+            <div class="content-box contact-bubble" data-copy="(404) 824-4256">
+                <h3>Phone</h3>
+                <p>(404) 824-4256</p>
+                <span class="copy-msg">Click to copy</span>
+            </div>
+
+            <div class="content-box contact-bubble" data-copy="linkedin.com/in/calvin-hirschler">
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/calvin-hirschler</p>
+                <span class="copy-msg">Click to copy</span>
+            </div>
+
+            <div class="content-box contact-bubble" data-copy="github.com/wafflekiller5876">
+                <h3>GitHub</h3>
+                <p>github.com/wafflekiller5876</p>
+                <span class="copy-msg">Click to copy</span>
+            </div>
+            
+            <div class="content-box contact-bubble" data-copy="wafflekiller5876.itch.io">
+                <h3>Itch.io</h3>
+                <p>wafflekiller5876.itch.io</p>
+                <span class="copy-msg">Click to copy</span>
+            </div>
         </div>
     </main>
 
     <script>
+        // Glitch hover effect
         const glitchElements = document.querySelectorAll('.content-box');
-        
         glitchElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 el.style.animation = 'none';
                 void el.offsetWidth; 
                 el.style.animation = `glitch-box 0.4s ease-out forwards`;
             });
-            
             el.addEventListener('mouseleave', () => {
                 el.style.animation = 'none';
+            });
+        });
+
+        // Copy to clipboard functionality
+        const contactBubbles = document.querySelectorAll('.contact-bubble');
+        contactBubbles.forEach(bubble => {
+            bubble.addEventListener('click', () => {
+                const textToCopy = bubble.getAttribute('data-copy');
+                navigator.clipboard.writeText(textToCopy);
+                
+                const msgSpan = bubble.querySelector('.copy-msg');
+                const originalText = msgSpan.innerText;
+                
+                msgSpan.innerText = 'Copied!';
+                msgSpan.style.color = '#fff';
+                
+                setTimeout(() => {
+                    msgSpan.innerText = originalText;
+                    msgSpan.style.color = '#2e8b57';
+                }, 2000);
             });
         });
     </script>

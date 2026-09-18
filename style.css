@@ -130,6 +130,63 @@ main {
     border: 1px dashed #444;
 }
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-bubble {
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-bubble h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #2e8b57;
+}
+
+.contact-bubble p {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+}
+
+.copy-msg {
+    font-size: 0.8rem;
+    color: #2e8b57;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.contact-bubble:hover .copy-msg {
+    opacity: 1;
+}
+
+.game-pitch {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.game-tech {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid #2e8b57;
+    font-style: italic;
+}
+
 @keyframes glitch-box {
     0% { transform: scale(1); box-shadow: 0 4px 6px rgba(0,0,0,0.3); border-color: #333; }
     25% { transform: scale(1.02); box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); border-color: #ffffff; }
