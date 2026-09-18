@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calvin Hirschler - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,8 +18,27 @@
     </header>
     <main>
         <h2>Contact</h2>
-        <p>Email: calvinhirschler@gmail.com</p>
-        <p>LinkedIn: linkedin.com/in/calvin-hirschler</p>
+        
+        <div class="content-box">
+            <p>Email: calvinhirschler@gmail.com</p>
+            <p>LinkedIn: linkedin.com/in/calvin-hirschler</p>
+        </div>
     </main>
+
+    <script>
+        const glitchElements = document.querySelectorAll('.content-box');
+        
+        glitchElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.animation = 'none';
+                void el.offsetWidth; 
+                el.style.animation = `glitch-box 0.4s ease-out forwards`;
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                el.style.animation = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
